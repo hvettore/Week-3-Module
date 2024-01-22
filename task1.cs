@@ -1,6 +1,6 @@
 while(!AtGoal)
 {
-    CheckAndMove():
+    CheckAndMove();
 }
 
 #region Basic functions
@@ -14,6 +14,10 @@ void CheckAndMove()
     else
     {
         Turn();
+        if(!Peek())
+        {
+            FullTurn();
+        }
     }
 }
 
@@ -25,6 +29,11 @@ void Move()
 void Turn()
 {
     // Turns the car 90 deg clockwise.
+}
+
+void FullTurn()
+{
+    // Turns the car 180 deg clockwise.
 }
 
 bool Peek()
