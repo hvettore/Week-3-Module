@@ -6,6 +6,7 @@
     <RootNamespace>Week_3_Module</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <DefaultItemExcludes>$(DefaultItemExcludes);task*.cs;</DefaultItemExcludes>
   </PropertyGroup>
 
 </Project>
