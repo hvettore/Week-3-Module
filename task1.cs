@@ -1,16 +1,9 @@
-// Your program should start at this line.
-/*
-
 while(!AtGoal)
 {
     CheckAndMove():
 }
 
-*/
-
 #region Basic functions
-// These functions are just her to make your intelisense work. 
-// They only have a conceptual function.
 
 void CheckAndMove()
 {
