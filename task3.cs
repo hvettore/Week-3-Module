@@ -14,7 +14,6 @@ void CheckAndMove()
     else
     {
         Turn();
-        Peek();
         if(!Peek())
         {
             FullTurn();
