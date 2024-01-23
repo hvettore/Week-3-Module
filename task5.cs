@@ -56,6 +56,18 @@ void RouteAct()
         Move();
     }
 
+    ResetDirection();
+}
+
+#region Added Basic Functions
+
+void FullTurn()
+{
+    // Turns the car 180 deg clockwise.
+}
+
+void ResetDirection()
+{
     Direction1 = false
     Direction2 = false
     Direction3 = false
@@ -72,11 +84,6 @@ void Move()
 void Turn()
 {
     // Turns the car 90 deg clockwise.
-}
-
-void FullTurn()
-{
-    // Turns the car 180 deg clockwise.
 }
 
 bool Peek()
