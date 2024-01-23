@@ -82,11 +82,6 @@ void DeadEndCheck()
     return true;
 }
 
-void BlockPath()
-{
-    // Registers a cell as inaccessible, car can no longer go through it.
-}
-
 void ResetDirection()
 {
     Direction1 = false
