@@ -9,10 +9,6 @@ while (!AtGoal)
     RouteAct();
 }
 
-#region Basic functions
-// These functions are just her to make your intelisense work. 
-// They only have a conceptual function.
-
 void RouteCheck()
 {
     if (Peek())
@@ -65,6 +61,8 @@ void RouteAct()
     Direction3 = false
     Direction4 = false
 }
+
+#region Basic functions
 
 void Move()
 {
