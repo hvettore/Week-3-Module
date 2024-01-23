@@ -11,41 +11,25 @@ while (!AtGoal)
 
 void RouteCheck()
 {
-    if (DeadEndCheck())
-    {
-        BlockPath();
-    }
-    else
+    if (!DeadEndCheck())
     {
         Direction1 = true;
     }
     Turn();
 
-    if (DeadEndCheck())
-    {
-        BlockPath();
-    }
-    else
+    if (!DeadEndCheck())
     {
         Direction2 = true;
     }
     Turn();
 
-    if (DeadEndCheck())
-    {
-        BlockPath();
-    }
-    else
+    if (!DeadEndCheck())
     {
         Direction3 = true;
     }
     Turn();
 
-    if (DeadEndCheck())
-    {
-        BlockPath();
-    }
-    else
+    if (!DeadEndCheck())
     {
         Direction4 = true;
     }
