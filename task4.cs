@@ -1,35 +1,117 @@
-while(!AtGoal)
+bool Direction1;
+bool Direction2;
+bool Direction3;
+bool Direction4;
+
+while (!AtGoal)
 {
-    CheckAndMove():
+    RouteCheck();
+    RouteAct();
 }
 
-#region Basic functions
-
-void CheckAndMove()
+void RouteCheck()
 {
-    if (Peek())
+    if (DeadEndCheck())
     {
-        Move();
+        BlockPath();
     }
     else
     {
+        Direction1 = true;
+    }
+    Turn();
+
+    if (DeadEndCheck())
+    {
+        BlockPath();
+    }
+    else
+    {
+        Direction2 = true;
+    }
+    Turn();
+
+    if (DeadEndCheck())
+    {
+        BlockPath();
+    }
+    else
+    {
+        Direction3 = true;
+    }
+    Turn();
+
+    if (DeadEndCheck())
+    {
+        BlockPath();
+    }
+    else
+    {
+        Direction4 = true;
+    }
+    Turn();
+}
+
+void RouteAct()
+{
+    if (Direction1 == true)
+    {
+        Move();
+        ResetDirection();
+        return;
+    }
+    else if (Direction2 == true)
+    {
         Turn();
-        if(!Peek())
-        {
-            FullTurn();
-            if(!Peek())
-            {
-                DeadEndTurn();
-                Move();
-                DeadEndTurn()
-                if(!Peek())
-                {
-                    FullTurn();
-                }
-            }
-        }
+        Move();
+        ResetDirection();
+        return;
+    }
+    else if (Direction3 == true)
+    {
+        FullTurn();
+        Move();
+        ResetDirection();
+        return;
+    }
+    else if (Direction4 == true)
+    {
+        FullTurn();
+        Turn();
+        Move();
+        ResetDirection();
+        return;
     }
 }
+
+#region Added Basic Functions
+
+void FullTurn()
+{
+    // Turns the car 180 deg clockwise.
+}
+
+void DeadEndCheck()
+{
+    // Simulates car going to the end of the path. If it hits a dead end, it returns true.
+    // If car faces the wall, the code will also return true.
+    return true;
+}
+
+void BlockPath()
+{
+    // Registers a cell as inaccessible, car can no longer go through it.
+}
+
+void ResetDirection()
+{
+    Direction1 = false
+    Direction2 = false
+    Direction3 = false
+    Direction4 = false
+}
+
+#region Basic functions
 
 void Move()
 {
@@ -39,21 +121,6 @@ void Move()
 void Turn()
 {
     // Turns the car 90 deg clockwise.
-}
-
-void FullTurn()
-{
-    // Turns the car 180 deg clockwise.
-}
-
-void Revese()
-{
-     // Moves the car 1 cell in the opposite direction it is heading.
-}
-
-void DeadEndTurn()
-{
-    // Turns the car 90 deg anti-clockwise.
 }
 
 bool Peek()

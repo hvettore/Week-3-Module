@@ -44,12 +44,12 @@ void RouteAct()
         Turn();
         Move();
     }
-    else if (Direction1 == true)
+    else if (Direction3 == true)
     {
         FullTurn();
         Move();
     }
-    else if (Direction1 == true)
+    else if (Direction4 == true)
     {
         FullTurn();
         Turn();
