@@ -3,8 +3,6 @@ while(!AtGoal)
     CheckAndMove():
 }
 
-#region Basic functions
-
 void CheckAndMove()
 {
     if (Peek())
@@ -20,6 +18,8 @@ void CheckAndMove()
         }
     }
 }
+
+#region Basic functions
 
 void Move()
 {
