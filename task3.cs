@@ -33,7 +33,8 @@ void Turn()
 
 void FullTurn()
 {
-    // Turns the car 180 deg clockwise.
+    Turn();
+    Turn();
 }
 
 bool Peek()

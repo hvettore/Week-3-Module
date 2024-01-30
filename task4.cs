@@ -1,93 +1,64 @@
-bool Direction1;
-bool Direction2;
-bool Direction3;
-bool Direction4;
-
 while (!AtGoal)
 {
-    RouteCheck();
-    RouteAct();
+    MazeRun();
 }
 
-void RouteCheck()
+void MazeRun()
 {
-    if (!DeadEndCheck())
-    {
-        Direction1 = true;
-    }
-    Turn();
-
-    if (!DeadEndCheck())
-    {
-        Direction2 = true;
-    }
-    Turn();
-
-    if (!DeadEndCheck())
-    {
-        Direction3 = true;
-    }
-    Turn();
-
-    if (!DeadEndCheck())
-    {
-        Direction4 = true;
-    }
-    Turn();
-}
-
-void RouteAct()
-{
-    if (Direction1 == true)
-    {
-        Move();
-        ResetDirection();
-        return;
-    }
-    else if (Direction2 == true)
+    if (CheckRight())
     {
         Turn();
         Move();
-        ResetDirection();
-        return;
     }
-    else if (Direction3 == true)
+    else if (Peek())
+    {
+        Move();
+    }
+    else if (CheckLeft())
+    {
+        TurnLeft();
+        Move();
+    }
+    else
     {
         FullTurn();
         Move();
-        ResetDirection();
-        return;
     }
-    else if (Direction4 == true)
+}
+
+void CheckLeft()
+{
+    TurnLeft()
+    if (Peek())
     {
-        FullTurn();
         Turn();
-        Move();
-        ResetDirection();
-        return;
+        return true;
     }
+}
+
+void CheckRight()
+{
+    Turn();
+    if (Peek())
+    {
+        TurnLeft();
+        return true;
+    }
+}
+
+void TurnLeft()
+{
+    Turn();
+    Turn();
+    Turn();
 }
 
 #region Added Basic Functions
 
 void FullTurn()
 {
-    // Turns the car 180 deg clockwise.
-}
-
-void DeadEndCheck()
-{
-    // Simulates car going to the end of the path. If it hits a dead end, it returns true.
-    // If car faces the wall, the code will also return true.
-    return true;
-}
-
-void ResetDirection()
-{
-    Direction1 = false
-    Direction2 = false
-    Direction3 = false
-    Direction4 = false
+    Turn();
+    Turn();
 }
 
 #region Basic functions

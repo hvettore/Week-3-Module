@@ -63,7 +63,8 @@ void RouteAct()
 
 void FullTurn()
 {
-    // Turns the car 180 deg clockwise.
+    Turn();
+    Turn();
 }
 
 void ResetDirection()
